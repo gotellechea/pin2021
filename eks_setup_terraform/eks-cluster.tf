@@ -2,7 +2,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "18.26.6"
   cluster_name    = local.cluster_name
-  cluster_version = "1.20"
+  cluster_version = "1.23"
   
   #Cluster Networks
   vpc_id          = module.vpc.vpc_id
@@ -21,7 +21,7 @@ module "eks" {
   eks_managed_node_groups = {
     one = {
       name                    = "worker-group-1"
-      instance_type           = "t2.small"
+      instance_type           = "t2.micro"
       desired_size            = 2
       pre_bootstrap_user_data = <<-EOT
       echo 'foo bar'
@@ -31,7 +31,7 @@ module "eks" {
 
     #two = {
     #  name                    = "worker-group-2"
-    #  instance_type           = "t2.medium"
+    #  instance_type           = "t2.micro"
     #  desired_size            = 1
     #  pre_bootstrap_user_data = <<-EOT
     #  echo 'foo bar'
