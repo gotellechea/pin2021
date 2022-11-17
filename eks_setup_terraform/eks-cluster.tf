@@ -21,7 +21,7 @@ module "eks" {
   eks_managed_node_groups = {
     one = {
       name                    = "worker-group-1"
-      instance_type           = "t2.micro"
+      instance_type           = "t2.small"
       desired_size            = 2
       pre_bootstrap_user_data = <<-EOT
       echo 'foo bar'
@@ -31,7 +31,7 @@ module "eks" {
 
     #two = {
     #  name                    = "worker-group-2"
-    #  instance_type           = "t2.micro"
+    #  instance_type           = "t2.small"
     #  desired_size            = 1
     #  pre_bootstrap_user_data = <<-EOT
     #  echo 'foo bar'
