@@ -49,4 +49,5 @@ sudo apt update
 # Install Terraform
 sudo apt install terraform
 
+cd /home/ubuntu
 git clone https://github.com/serialito74/pin2021.git
